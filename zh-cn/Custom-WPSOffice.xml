@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <CleanCollection4>
+    <Item Name="WPS Office 老版本备份" Level="2">
+      <Discription>#WPS Office 升级到新版本后留下的备份文件，在故障时回滚到老版本。</Discription>
+      <Group>#过期文件</Group>
+      <Scan>
+        <Applicable>
+          <ImageFlags>1</ImageFlags>
+          <RegExist Key="HKEY_CURRENT_USER\SOFTWARE\kingsoft\Office\6.0\Common" Value="InstallRoot"/>
+        </Applicable>
+        <Activate>
+          <General RootPath="?GetRegSz(HKEY_CURRENT_USER\SOFTWARE\kingsoft\Office\6.0\Common,InstallRoot)\.." Flags="Directory">
+            <Query>*.*.*.*</Query>
+            <Excluded>?GetRegSz(HKEY_CURRENT_USER\SOFTWARE\kingsoft\Office\6.0\Common,Version)</Excluded>
+          </General>
+        </Activate>
+      </Scan>
+    </Item>
+  </CleanCollection4>
+</Data>

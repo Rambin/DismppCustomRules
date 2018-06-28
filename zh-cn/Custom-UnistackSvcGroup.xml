@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <CleanCollection4>
+  </CleanCollection4>
+  <SystemOptimization>
+    <Group Name="服务优化">
+      <Item Type="CheckBox" Name="禁用 UnistackSvcGroup 服务组">
+        <Applicable>
+          <!-- <OSVersion Compare=">=">10.0</OSVersion> -->
+          <Or>
+            <QueryServiceStart Name="CDPUserSvc"/> <!-- 10586没有此服务 -->
+            <QueryServiceStart Name="MessagingService"/>
+            <QueryServiceStart Name="OneSyncSvc"/>
+            <QueryServiceStart Name="PimIndexMaintenanceSvc"/>
+            <QueryServiceStart Name="UnistoreSvc"/>
+            <QueryServiceStart Name="UserDataSvc"/>
+            <QueryServiceStart Name="WpnUserService"/> <!-- 10586没有此服务 -->
+          </Or>
+        </Applicable>
+        <System>
+          <State>
+            <Applicable>
+              <And>
+                <Or>
+                  <Not>
+                    <QueryServiceStart Name="CDPUserSvc"/>
+                  </Not>
+                  <QueryServiceStart Name="CDPUserSvc" Type="4"/>
+                </Or>
+                <Or>
+                  <Not>
+                    <QueryServiceStart Name="MessagingService"/>
+                  </Not>
+                  <QueryServiceStart Name="MessagingService" Type="4"/>
+                </Or>
+                <Or>
+                  <Not>
+                    <QueryServiceStart Name="OneSyncSvc"/>
+                  </Not>
+                  <QueryServiceStart Name="OneSyncSvc" Type="4"/>
+                </Or>
+                <Or>
+                  <Not>
+                    <QueryServiceStart Name="PimIndexMaintenanceSvc"/>
+                  </Not>
+                  <QueryServiceStart Name="PimIndexMaintenanceSvc" Type="4"/>
+                </Or>
+                <Or>
+                  <Not>
+                    <QueryServiceStart Name="UnistoreSvc"/>
+                  </Not>
+                  <QueryServiceStart Name="UnistoreSvc" Type="4"/>
+                </Or>
+                <Or>
+                  <Not>
+                    <QueryServiceStart Name="UserDataSvc"/>
+                  </Not>
+                  <QueryServiceStart Name="UserDataSvc" Type="4"/>
+                </Or>
+                <Or>
+                  <Not>
+                    <QueryServiceStart Name="WpnUserService"/>
+                  </Not>
+                  <QueryServiceStart Name="WpnUserService" Type="4"/>
+                </Or>
+              </And>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+              <SetServiceStart Name="CDPUserSvc" Type="4" SkipError="2"/>
+              <SetServiceStart Name="MessagingService" Type="4" SkipError="2"/>
+              <SetServiceStart Name="OneSyncSvc" Type="4" SkipError="2"/>
+              <SetServiceStart Name="PimIndexMaintenanceSvc" Type="4" SkipError="2"/>
+              <SetServiceStart Name="UnistoreSvc" Type="4" SkipError="2"/>
+              <SetServiceStart Name="UserDataSvc" Type="4" SkipError="2"/>
+              <SetServiceStart Name="WpnUserService" Type="4" SkipError="2"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <SetServiceStart Name="CDPUserSvc" Type="2" SkipError="2"/>
+              <SetServiceStart Name="MessagingService" Type="3" SkipError="2"/>
+              <SetServiceStart Name="OneSyncSvc" Type="2" SkipError="2"/>
+              <SetServiceStart Name="PimIndexMaintenanceSvc" Type="3" SkipError="2"/>
+              <SetServiceStart Name="UnistoreSvc" Type="3" SkipError="2"/>
+              <SetServiceStart Name="UserDataSvc" Type="3" SkipError="2"/>
+              <SetServiceStart Name="WpnUserService" Type="3" SkipError="2"/>
+            </Activate>
+          </False>
+        </System>
+      </Item>
+    </Group>
+  </SystemOptimization>
+</Data>

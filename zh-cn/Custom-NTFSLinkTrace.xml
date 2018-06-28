@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <SystemOptimization>
+    <Group Name="服务优化 + 停用NTFS链接跟踪服务">
+      <Item Type="CheckBox" Name="停用NTFS链接跟踪服务">
+        <Applicable>
+          <QueryServiceStart Name="TrkWks"/>
+        </Applicable>
+        <System>
+          <State>
+            <Applicable>
+              <Or>
+                <QueryServiceStart Name="TrkWks" Type="3"/>
+                <QueryServiceStart Name="TrkWks" Type="4"/>
+              </Or>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+              <SetServiceStart Name="TrkWks" Type="3"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <SetServiceStart Name="TrkWks" Type="2"/>
+            </Activate>
+          </False>
+        </System>
+      </Item>
+    </Group>
+  </SystemOptimization>
+</Data>

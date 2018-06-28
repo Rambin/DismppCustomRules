@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <CleanCollection4>
+  </CleanCollection4>
+  <SystemOptimization>
+    <Group Name="Explorer + PowerShell脚本添加“以管理员身份运行”">
+      <Item Type="CheckBox" Name="PowerShell脚本添加“以管理员身份运行”">
+        <Applicable>
+          <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Microsoft.PowerShellScript.1"/>
+        </Applicable>
+        <System>
+          <State>
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Microsoft.PowerShellScript.1\Shell\runas" Value="HasLUAShield" Type="REG_SZ"/>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Microsoft.PowerShellScript.1\Shell\runas\Command" Value="" Type="REG_SZ" Data="powershell.exe &quot;-Command&quot; &quot;if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; &amp; '%1'&quot;"/>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Microsoft.PowerShellScript.1\Shell\runas" Value="HasLUAShield" Type="REG_SZ" Data=""/>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Microsoft.PowerShellScript.1\Shell\runas\Command" Value="" Type="REG_SZ" Data="powershell.exe &quot;-Command&quot; &quot;if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; &amp; '%1'&quot;"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <RegDelete Key="HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Microsoft.PowerShellScript.1\Shell\runas"/>
+            </Activate>
+          </False>
+        </System>
+      </Item>
+    </Group>
+  </SystemOptimization>
+</Data>

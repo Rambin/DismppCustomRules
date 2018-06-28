@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <CleanCollection4>
+  </CleanCollection4>
+  <SystemOptimization>
+    <Group Name="Explorer + 隐藏右键菜单的&quot;固定到快速访问&quot;（按住Shift显示）">
+      <Item Type="CheckBox" Name="隐藏右键菜单的&quot;固定到快速访问&quot;（按住Shift显示）">
+        <Applicable>
+          <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\pintohome"/>
+        </Applicable>
+        <System>
+          <State>
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\pintohome" Value="Extended"/>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\pintohome" Value="Extended" Type="REG_SZ" Data=""/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <RegDelete Key="HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\pintohome" Value="Extended" SkipError="2"/>
+            </Activate>
+          </False>
+        </System>
+      </Item>
+    </Group>
+  </SystemOptimization>
+</Data>

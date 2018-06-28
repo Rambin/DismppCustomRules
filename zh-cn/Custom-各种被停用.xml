@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <CleanCollection4>
+    <Item Name="解除被停用" Level="2">
+      <Discription>解除命令行、任务管理器、注册表编辑器、特定程序被停用</Discription>
+      <Group>#系统相关</Group>
+      <Scan>
+        <Applicable>
+          <Or>
+            <RegExist Key="HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\System" Value="DisableCMD" Type="REG_DWORD"/>
+            <RegExist Key="HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\System" Value="DisableTaskMgr" Type="REG_DWORD"/>
+            <RegExist Key="HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" Value="DisableRegistryTools"/>
+            <RegExist Key="HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" Value="RestrictRun"/>
+            <RegExist Key="HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" Value="DisallowRun"/>
+          </Or>
+        </Applicable>
+        <Activate>
+          <RegDelete Key="HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\System" Value="DisableCMD" SkipError="2"/>
+          <RegDelete Key="HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\System" Value="DisableTaskMgr" SkipError="2"/>
+          <RegDelete Key="HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" Value="DisableRegistryTools" SkipError="2"/>
+          <RegDelete Key="HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" Value="RestrictRun" SkipError="2"/>
+          <RegDelete Key="HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" Value="DisallowRun" SkipError="2"/>
+        </Activate>
+      </Scan>
+    </Item>
+  </CleanCollection4>
+  <SystemOptimization>
+  </SystemOptimization>
+</Data>

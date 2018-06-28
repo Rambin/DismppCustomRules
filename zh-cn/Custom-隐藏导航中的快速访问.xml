@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <CleanCollection4>
+  </CleanCollection4>
+  <SystemOptimization>
+    <Group Name="资源管理器导航窗口图标管理+">
+      <Item Type="CheckBox" Name="隐藏资源管理器导航窗口中的快速访问">
+        <Applicable>
+          <RegExist Key="HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder" Value="Attributes" Type="REG_DWORD"/>
+        </Applicable>
+        <System>
+          <State>
+            <Applicable>
+              <And>
+                <Not>
+                  <RegExist Key="HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder" Value="Attributes" Type="REG_DWORD" Compare="&amp;" Data="100000"/>
+                </Not>
+                <Not>
+                  <RegExist Key="HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder" Value="Attributes" Type="REG_DWORD" Compare="&amp;" Data="100000" Wow64="True"/>
+                </Not>
+                <RegExist Key="HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder" Value="Attributes" Type="REG_DWORD" Compare="&amp;" Data="600000"/>
+                <RegExist Key="HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder" Value="Attributes" Type="REG_DWORD" Compare="&amp;" Data="600000" Wow64="True"/>
+              </And>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+              <RegWrite Key="HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder" Value="Attributes" Type="REG_DWORD" Operator="&amp;" Data="FFEFFFFF"/>
+              <RegWrite Key="HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder" Value="Attributes" Type="REG_DWORD" Operator="&amp;" Data="FFEFFFFF" Wow64="True"/>
+              <RegWrite Key="HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder" Value="Attributes" Type="REG_DWORD" Operator="|" Data="600000"/>
+              <RegWrite Key="HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder" Value="Attributes" Type="REG_DWORD" Operator="|" Data="600000" Wow64="True"/>
+              <ExplorerNotify Type="Restart"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <RegWrite Key="HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder" Value="Attributes" Type="REG_DWORD" Operator="&amp;" Data="FF9FFFFF"/>
+              <RegWrite Key="HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder" Value="Attributes" Type="REG_DWORD" Operator="&amp;" Data="FF9FFFFF" Wow64="True"/>
+              <RegWrite Key="HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder" Value="Attributes" Type="REG_DWORD" Operator="|" Data="100000"/>
+              <RegWrite Key="HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder" Value="Attributes" Type="REG_DWORD" Operator="|" Data="100000" Wow64="True"/>
+              <ExplorerNotify Type="Restart"/>
+            </Activate>
+          </False>
+        </System>
+      </Item>
+    </Group>
+  </SystemOptimization>
+</Data>

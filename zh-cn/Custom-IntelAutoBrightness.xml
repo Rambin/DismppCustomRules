@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <CleanCollection4>
+  </CleanCollection4>
+  <SystemOptimization>
+    <Group Name="Intel 核芯显卡">
+      <Item Type="CheckBox" Name="显示器节能技术（根据内容调节亮度）">
+        <Applicable>
+          <RegExist Key="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000" Value="ProviderName" Type="REG_SZ" Data="Intel Corporation"/>
+        </Applicable>
+        <System>
+          <State>
+            <Applicable>
+              <Not>
+                <Or>
+                  <RegExist Key="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000" Value="ACUserPreferencePolicy" Type="REG_DWORD" Data="00020000" Compare="&amp;"/>
+                  <RegExist Key="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000" Value="DCUserPreferencePolicy" Type="REG_DWORD" Data="00020000" Compare="&amp;"/>
+                </Or>
+              </Not>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000" Value="ACUserPreferencePolicy" Type="REG_DWORD" Data="FFFDFFFF" Operator="&amp;" Default="00000000"/>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000" Value="DCUserPreferencePolicy" Type="REG_DWORD" Data="FFFDFFFF" Operator="&amp;" Default="00000000"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000" Value="ACUserPreferencePolicy" Type="REG_DWORD" Data="00020000" Operator="|" Default="00000000"/>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000" Value="DCUserPreferencePolicy" Type="REG_DWORD" Data="00020000" Operator="|" Default="00000000"/>
+            </Activate>
+          </False>
+        </System>
+      </Item>
+    </Group>
+  </SystemOptimization>
+</Data>

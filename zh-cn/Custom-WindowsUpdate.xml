@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <CleanCollection4>
+  </CleanCollection4>
+  <SystemOptimization>
+    <Group Name="Windows Update + 将Windows Update自动更新调整为">
+      <Item Type="Combo" Name="#*将Windows Update自动更新调整为">
+        <Applicable>
+          <Or>
+            <OSVersion Compare=">=">6.4</OSVersion>
+            <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" Value="AUOptions" Type="REG_DWORD"/>
+          </Or>
+        </Applicable>
+        <System>
+          <Dropdown Name="#从不检查（不推荐）">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" Value="AUOptions" Type="REG_DWORD" Data="1"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" Value="AUOptions" Type="REG_DWORD" Data="1"/>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" Value="NoAutoUpdate" Type="REG_DWORD" Data="0"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="#仅检查更新">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" Value="AUOptions" Type="REG_DWORD" Data="2"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" Value="AUOptions" Type="REG_DWORD" Data="2"/>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" Value="NoAutoUpdate" Type="REG_DWORD" Data="0"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="#检查并下载更新">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" Value="AUOptions" Type="REG_DWORD" Data="3"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" Value="AUOptions" Type="REG_DWORD" Data="3"/>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" Value="NoAutoUpdate" Type="REG_DWORD" Data="0"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="#自动安装更新（推荐）">
+            <Applicable>
+              <Or>
+                <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" Value="AUOptions" Type="REG_DWORD" Data="4"/>
+                <Not>
+                  <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" Value="AUOptions"/>
+                </Not>
+              </Or>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" Value="AUOptions" Type="REG_DWORD" Data="4"/>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" Value="NoAutoUpdate" Type="REG_DWORD" Data="0"/>
+            </Activate>
+          </Dropdown>
+        </System>
+      </Item>
+    </Group>
+  </SystemOptimization>
+</Data>

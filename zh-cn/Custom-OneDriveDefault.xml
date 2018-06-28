@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <CleanCollection4>
+    <Item Name="多余的OneDriveSetup.exe" Level="2">
+      <Discription>关闭新用户自动安装OneDrive后清理多余的OneDriveSetup.exe文件</Discription>
+      <Group>#过期文件</Group>
+      <Scan>
+        <Applicable>
+          <Arch>9</Arch>
+          <FileExist FilePath="%SystemRoot%\SysWOW64\OneDriveSetup.exe" Wow64="All"/>
+          <Not>
+            <RegExist Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run" Value="OneDriveSetup"/>
+          </Not>
+        </Applicable>
+        <Activate>
+          <General RootPath="%SystemRoot%\SysWOW64" Flags="File">
+            <Query>OneDriveSetup.exe</Query>
+          </General>
+        </Activate>
+      </Scan>
+    </Item>
+    <Item Name="多余的OneDriveSetup.exe" Level="2">
+      <Discription>关闭新用户自动安装OneDrive后清理多余的OneDriveSetup.exe文件</Discription>
+      <Group>#过期文件</Group>
+      <Scan>
+        <Applicable>
+          <Arch>0</Arch>
+          <FileExist FilePath="%SystemRoot%\System32\OneDriveSetup.exe" Wow64="All"/>
+          <Not>
+            <RegExist Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run" Value="OneDriveSetup"/>
+          </Not>
+        </Applicable>
+        <Activate>
+          <General RootPath="%SystemRoot%\System32" Flags="File">
+            <Query>OneDriveSetup.exe</Query>
+          </General>
+        </Activate>
+      </Scan>
+    </Item>
+  </CleanCollection4>
+  <SystemOptimization>
+    <Group Name="OneDrive + 新用户自动安装OneDrive">
+      <Item Type="CheckBox" Name="新用户自动安装OneDrive">
+        <Applicable>
+          <Arch>9</Arch>
+          <Or>
+            <RegExist Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run" Value="OneDriveSetup"/>
+            <FileExist FilePath="%SystemRoot%\SysWOW64\OneDriveSetup.exe"/>
+          </Or>
+        </Applicable>
+        <Default>
+          <State>
+            <Applicable>
+              <RegExist Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run" Value="OneDriveSetup"/>
+            </Applicable>
+          </State>
+          <True>
+            <Applicable_1>
+              <FileExist FilePath="%SystemRoot%\SysWOW64\OneDriveSetup.exe"/>
+            </Applicable_1>
+            <Activate>
+              <RegWrite Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run"/>
+              <RegWrite Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run" Value="OneDriveSetup" Type="REG_EXPAND_SZ" Data="%SystemRoot%\SysWOW64\OneDriveSetup.exe /thfirstsetup" ID="Applicable_1"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <RegDelete Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run" Value="OneDriveSetup" SkipError="2"/>
+            </Activate>
+          </False>
+        </Default>
+      </Item>
+      <Item Type="CheckBox" Name="新用户自动安装OneDrive">
+        <Applicable>
+          <Arch>0</Arch>
+          <Or>
+            <RegExist Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run" Value="OneDriveSetup"/>
+            <FileExist FilePath="%SystemRoot%\System32\OneDriveSetup.exe"/>
+          </Or>
+        </Applicable>
+        <Default>
+          <State>
+            <Applicable>
+              <RegExist Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run" Value="OneDriveSetup"/>
+            </Applicable>
+          </State>
+          <True>
+            <Applicable_1>
+              <FileExist FilePath="%SystemRoot%\System32\OneDriveSetup.exe"/>
+            </Applicable_1>
+            <Activate>
+              <RegWrite Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run"/>
+              <RegWrite Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run" Value="OneDriveSetup" Type="REG_EXPAND_SZ" Data="%SystemRoot%\System32\OneDriveSetup.exe /thfirstsetup" ID="Applicable_1"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <RegDelete Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run" Value="OneDriveSetup" SkipError="2"/>
+            </Activate>
+          </False>
+        </Default>
+      </Item>
+    </Group>
+  </SystemOptimization>
+</Data>
