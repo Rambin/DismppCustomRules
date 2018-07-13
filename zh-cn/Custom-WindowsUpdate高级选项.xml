@@ -1,0 +1,3237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <CleanCollection4>
+  </CleanCollection4>
+  <SystemOptimization>
+    <Group Name="Windows Update 高级选项">
+      <Item Type="Combo" Name="分支就绪级别">
+        <Applicable>
+          <OSVersion Compare=">=">10.0.15063</OSVersion>
+        </Applicable>
+        <System>
+          <Dropdown Name="半年频道(定向)（Current Branch）">
+            <Applicable>
+              <Not>
+                <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="BranchReadinessLevel" Type="REG_DWORD" Data="20"/>
+              </Not>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="BranchReadinessLevel" Type="REG_DWORD" Data="10"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="半年频道（Current Branch for Business）">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="BranchReadinessLevel" Type="REG_DWORD" Data="20"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="BranchReadinessLevel" Type="REG_DWORD" Data="20"/>
+            </Activate>
+          </Dropdown>
+        </System>
+      </Item>
+      
+      <Item Type="Combo" Name="功能更新延迟（大版本更新）">
+        <Applicable>
+          <OSVersion Compare=">=">10.0.15063</OSVersion>
+        </Applicable>
+        <System>
+          <Dropdown Name="不延迟">
+            <Applicable>
+              <Or>
+                <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="0"/>
+                <Not>
+                  <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays"/>
+                </Not>
+              </Or>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="0"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="1天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="1"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="1"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="2天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="2"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="2"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="3天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="3"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="3"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="4天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="4"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="4"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="5天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="5"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="5"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="6天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="6"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="6"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="7天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="7"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="7"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="8天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="8"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="8"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="9天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="9"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="9"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="10天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="11天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="12天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="13天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="14天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="15天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="16天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="10"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="10"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="17天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="11"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="11"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="18天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="12"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="12"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="19天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="13"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="13"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="20天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="14"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="14"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="21天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="15"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="15"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="22天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="16"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="16"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="23天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="17"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="17"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="24天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="18"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="18"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="25天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="19"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="19"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="26天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="1a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="1a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="27天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="1b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="1b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="28天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="1c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="1c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="29天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="1d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="1d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="30天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="1e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="1e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="31天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="1f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="1f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="32天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="20"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="20"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="33天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="21"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="21"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="34天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="22"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="22"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="35天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="23"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="23"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="36天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="24"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="24"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="37天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="25"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="25"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="38天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="26"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="26"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="39天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="27"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="27"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="40天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="28"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="28"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="41天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="29"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="29"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="42天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="2a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="2a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="43天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="2b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="2b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="44天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="2c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="2c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="45天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="2d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="2d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="46天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="2e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="2e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="47天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="2f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="2f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="48天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="30"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="30"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="49天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="31"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="31"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="50天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="32"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="32"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="51天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="33"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="33"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="52天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="34"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="34"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="53天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="35"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="35"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="54天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="36"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="36"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="55天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="37"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="37"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="56天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="38"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="38"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="57天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="39"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="39"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="58天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="3a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="3a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="59天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="3b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="3b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="60天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="3c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="3c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="61天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="3d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="3d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="62天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="3e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="3e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="63天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="3f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="3f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="64天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="40"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="40"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="65天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="41"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="41"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="66天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="42"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="42"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="67天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="43"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="43"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="68天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="44"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="44"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="69天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="45"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="45"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="70天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="46"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="46"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="71天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="47"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="47"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="72天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="48"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="48"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="73天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="49"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="49"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="74天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="4a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="4a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="75天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="4b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="4b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="76天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="4c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="4c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="77天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="4d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="4d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="78天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="4e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="4e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="79天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="4f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="4f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="80天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="50"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="50"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="81天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="51"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="51"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="82天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="52"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="52"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="83天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="53"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="53"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="84天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="54"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="54"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="85天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="55"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="55"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="86天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="56"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="56"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="87天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="57"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="57"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="88天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="58"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="58"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="89天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="59"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="59"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="90天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="5a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="5a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="91天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="5b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="5b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="92天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="5c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="5c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="93天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="5d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="5d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="94天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="5e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="5e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="95天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="5f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="5f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="96天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="60"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="60"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="97天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="61"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="61"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="98天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="62"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="62"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="99天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="63"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="63"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="100天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="64"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="64"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="101天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="65"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="65"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="102天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="66"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="66"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="103天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="67"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="67"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="104天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="68"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="68"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="105天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="69"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="69"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="106天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="6a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="6a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="107天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="6b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="6b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="108天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="6c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="6c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="109天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="6d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="6d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="110天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="6e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="6e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="111天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="6f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="6f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="112天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="70"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="70"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="113天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="71"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="71"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="114天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="72"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="72"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="115天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="73"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="73"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="116天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="74"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="74"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="117天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="75"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="75"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="118天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="76"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="76"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="119天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="77"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="77"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="120天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="78"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="78"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="121天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="79"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="79"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="122天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="7a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="7a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="123天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="7b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="7b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="124天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="7c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="7c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="125天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="7d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="7d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="126天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="7e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="7e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="127天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="7f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="7f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="128天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="80"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="80"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="129天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="81"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="81"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="130天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="82"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="82"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="131天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="83"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="83"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="132天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="84"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="84"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="133天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="85"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="85"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="134天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="86"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="86"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="135天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="87"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="87"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="136天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="88"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="88"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="137天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="89"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="89"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="138天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="8a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="8a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="139天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="8b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="8b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="140天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="8c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="8c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="141天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="8d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="8d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="142天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="8e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="8e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="143天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="8f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="8f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="144天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="90"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="90"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="145天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="91"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="91"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="146天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="92"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="92"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="147天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="93"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="93"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="148天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="94"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="94"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="149天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="95"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="95"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="150天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="96"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="96"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="151天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="97"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="97"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="152天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="98"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="98"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="153天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="99"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="99"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="154天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="9a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="9a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="155天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="9b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="9b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="156天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="9c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="9c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="157天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="9d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="9d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="158天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="9e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="9e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="159天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="9f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="9f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="160天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a0"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a0"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="161天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a1"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a1"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="162天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a2"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a2"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="163天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a3"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a3"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="164天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a4"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a4"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="165天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a5"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a5"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="166天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a6"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a6"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="167天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a7"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a7"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="168天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a8"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a8"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="169天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a9"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="a9"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="170天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="aa"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="aa"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="171天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ab"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ab"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="172天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ac"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ac"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="173天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ad"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ad"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="174天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ae"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ae"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="175天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="af"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="af"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="176天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b0"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b0"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="177天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b1"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b1"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="178天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b2"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b2"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="179天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b3"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b3"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="180天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b4"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b4"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="181天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b5"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b5"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="182天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b6"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b6"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="183天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b7"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b7"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="184天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b8"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b8"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="185天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b9"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="b9"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="186天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ba"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ba"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="187天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="bb"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="bb"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="188天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="bc"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="bc"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="189天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="bd"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="bd"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="190天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="be"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="be"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="191天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="bf"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="bf"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="192天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c0"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c0"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="193天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c1"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c1"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="194天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c2"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c2"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="195天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c3"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c3"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="196天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c4"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c4"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="197天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c5"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c5"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="198天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c6"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c6"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="199天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c7"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c7"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="200天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c8"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c8"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="201天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c9"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="c9"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="202天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ca"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ca"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="203天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="cb"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="cb"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="204天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="cc"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="cc"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="205天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="cd"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="cd"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="206天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ce"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ce"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="207天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="cf"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="cf"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="208天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d0"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d0"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="209天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d1"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d1"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="210天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d2"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d2"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="211天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d3"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d3"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="212天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d4"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d4"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="213天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d5"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d5"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="214天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d6"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d6"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="215天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d7"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d7"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="216天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d8"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d8"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="217天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d9"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="d9"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="218天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="da"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="da"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="219天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="db"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="db"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="220天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="dc"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="dc"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="221天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="dd"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="dd"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="222天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="de"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="de"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="223天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="df"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="df"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="224天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e0"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e0"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="225天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e1"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e1"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="226天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e2"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e2"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="227天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e3"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e3"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="228天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e4"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e4"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="229天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e5"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e5"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="230天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e6"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e6"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="231天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e7"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e7"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="232天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e8"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e8"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="233天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e9"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="e9"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="234天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ea"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ea"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="235天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="eb"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="eb"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="236天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ec"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ec"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="237天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ed"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ed"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="238天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ee"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ee"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="239天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ef"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ef"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="240天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f0"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f0"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="241天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f1"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f1"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="242天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f2"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f2"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="243天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f3"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f3"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="244天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f4"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f4"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="245天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f5"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f5"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="246天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f6"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f6"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="247天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f7"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f7"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="248天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f8"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f8"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="249天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f9"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="f9"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="250天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="fa"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="fa"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="251天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="fb"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="fb"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="252天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="fc"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="fc"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="253天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="fd"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="fd"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="254天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="fe"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="fe"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="255天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ff"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="ff"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="256天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="100"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="100"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="257天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="101"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="101"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="258天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="102"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="102"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="259天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="103"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="103"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="260天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="104"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="104"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="261天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="105"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="105"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="262天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="106"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="106"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="263天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="107"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="107"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="264天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="108"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="108"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="265天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="109"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="109"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="266天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="10a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="10a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="267天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="10b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="10b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="268天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="10c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="10c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="269天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="10d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="10d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="270天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="10e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="10e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="271天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="10f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="10f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="272天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="110"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="110"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="273天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="111"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="111"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="274天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="112"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="112"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="275天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="113"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="113"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="276天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="114"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="114"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="277天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="115"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="115"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="278天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="116"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="116"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="279天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="117"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="117"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="280天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="118"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="118"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="281天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="119"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="119"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="282天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="11a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="11a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="283天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="11b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="11b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="284天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="11c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="11c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="285天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="11d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="11d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="286天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="11e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="11e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="287天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="11f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="11f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="288天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="120"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="120"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="289天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="121"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="121"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="290天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="122"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="122"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="291天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="123"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="123"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="292天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="124"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="124"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="293天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="125"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="125"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="294天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="126"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="126"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="295天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="127"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="127"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="296天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="128"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="128"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="297天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="129"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="129"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="298天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="12a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="12a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="299天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="12b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="12b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="300天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="12c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="12c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="301天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="12d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="12d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="302天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="12e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="12e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="303天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="12f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="12f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="304天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="130"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="130"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="305天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="131"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="131"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="306天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="132"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="132"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="307天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="133"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="133"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="308天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="134"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="134"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="309天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="135"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="135"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="310天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="136"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="136"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="311天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="137"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="137"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="312天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="138"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="138"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="313天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="139"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="139"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="314天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="13a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="13a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="315天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="13b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="13b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="316天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="13c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="13c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="317天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="13d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="13d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="318天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="13e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="13e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="319天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="13f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="13f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="320天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="140"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="140"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="321天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="141"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="141"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="322天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="142"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="142"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="323天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="143"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="143"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="324天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="144"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="144"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="325天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="145"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="145"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="326天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="146"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="146"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="327天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="147"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="147"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="328天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="148"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="148"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="329天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="149"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="149"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="330天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="14a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="14a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="331天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="14b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="14b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="332天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="14c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="14c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="333天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="14d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="14d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="334天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="14e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="14e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="335天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="14f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="14f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="336天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="150"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="150"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="337天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="151"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="151"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="338天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="152"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="152"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="339天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="153"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="153"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="340天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="154"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="154"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="341天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="155"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="155"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="342天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="156"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="156"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="343天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="157"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="157"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="344天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="158"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="158"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="345天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="159"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="159"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="346天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="15a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="15a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="347天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="15b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="15b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="348天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="15c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="15c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="349天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="15d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="15d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="350天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="15e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="15e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="351天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="15f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="15f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="352天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="160"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="160"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="353天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="161"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="161"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="354天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="162"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="162"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="355天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="163"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="163"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="356天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="164"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="164"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="357天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="165"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="165"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="358天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="166"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="166"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="359天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="167"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="167"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="360天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="168"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="168"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="361天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="169"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="169"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="362天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="16a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="16a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="363天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="16b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="16b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="364天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="16c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="16c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="365天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="16d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferFeatureUpdatesPeriodInDays" Type="REG_DWORD" Data="16d"/>
+            </Activate>
+          </Dropdown>
+        </System>
+      </Item>
+      
+      <Item Type="Combo" Name="质量更新延迟（月度积累更新）">
+        <Applicable>
+          <OSVersion Compare=">=">10.0.15063</OSVersion>
+        </Applicable>
+        <System>
+          <Dropdown Name="不延迟">
+            <Applicable>
+              <Or>
+                <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="0"/>
+                <Not>
+                  <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays"/>
+                </Not>
+              </Or>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="0"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="1天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="1"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="1"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="2天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="2"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="2"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="3天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="3"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="3"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="4天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="4"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="4"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="5天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="5"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="5"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="6天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="6"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="6"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="7天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="7"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="7"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="8天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="8"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="8"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="9天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="9"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="9"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="10天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="11天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="12天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="13天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="14天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="e"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="15天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="f"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="f"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="16天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="10"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="10"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="17天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="11"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="11"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="18天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="12"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="12"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="19天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="13"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="13"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="20天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="14"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="14"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="21天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="15"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="15"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="22天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="16"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="16"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="23天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="17"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="17"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="24天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="18"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="18"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="25天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="19"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="19"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="26天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="1a"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="1a"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="27天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="1b"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="1b"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="28天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="1c"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="1c"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="29天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="1d"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="1d"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="30天">
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="1e"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" Value="DeferQualityUpdatesPeriodInDays" Type="REG_DWORD" Data="1e"/>
+            </Activate>
+          </Dropdown>
+        </System>
+      </Item>
+    </Group>
+  </SystemOptimization>
+</Data>
