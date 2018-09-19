@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <CleanCollection4>
+  </CleanCollection4>
+  <SystemOptimization>
+    <Group Name="轻松使用">
+      <Item Type="CheckBox" Name="彻底关闭筛选键">
+        <Applicable>
+          <Or>
+            <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\filterkeys"/>
+            <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\filterkeys-disabled"/>
+          </Or>
+        </Applicable>
+        <Current>
+          <State>
+            <Applicable>
+              <Not>
+                <RegExist Key="HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response" Value="Flags"/>
+              </Not>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+              <RegMove Key="HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response" NewKey="HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response" Value="Flags" NewValue="Flags-disabled" SkipError="2"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <RegMove Key="HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response" NewKey="HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response" Value="Flags-disabled" NewValue="Flags" SkipError="2"/>
+            </Activate>
+          </False>
+        </Current>
+        <System>
+          <State>
+            <Applicable>
+              <Not>
+                <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\filterkeys"/>
+              </Not>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+              <RegMove Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\filterkeys" NewKey="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\filterkeys-disabled" SkipError="2"/>
+              <RegMove Key="HKEY_USERS\DEFAULT\Control Panel\Accessibility\Keyboard Response" NewKey="HKEY_USERS\DEFAULT\Control Panel\Accessibility\Keyboard Response" Value="Flags" NewValue="Flags-disabled" SkipError="2"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <RegMove Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\filterkeys-disabled" NewKey="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\filterkeys" SkipError="2"/>
+              <RegMove Key="HKEY_USERS\DEFAULT\Control Panel\Accessibility\Keyboard Response" NewKey="HKEY_USERS\DEFAULT\Control Panel\Accessibility\Keyboard Response" Value="Flags-disabled" NewValue="Flags" SkipError="2"/>
+            </Activate>
+          </False>
+        </System>
+      </Item>
+      <Item Type="CheckBox" Name="彻底关闭切换键">
+        <Applicable>
+          <Or>
+            <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\togglekeys"/>
+            <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\togglekeys-disabled"/>
+          </Or>
+        </Applicable>
+        <Current>
+          <State>
+            <Applicable>
+              <Not>
+                <RegExist Key="HKEY_CURRENT_USER\Control Panel\Accessibility\ToggleKeys"/>
+              </Not>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+              <RegMove Key="HKEY_CURRENT_USER\Control Panel\Accessibility\ToggleKeys" NewKey="HKEY_CURRENT_USER\Control Panel\Accessibility\ToggleKeys-disabled" SkipError="2"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <RegMove Key="HKEY_CURRENT_USER\Control Panel\Accessibility\ToggleKeys-disabled" NewKey="HKEY_CURRENT_USER\Control Panel\Accessibility\ToggleKeys" SkipError="2"/>
+            </Activate>
+          </False>
+        </Current>
+        <System>
+          <State>
+            <Applicable>
+              <Not>
+                <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\togglekeys"/>
+              </Not>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+              <RegMove Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\togglekeys" NewKey="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\togglekeys-disabled" SkipError="2"/>
+              <RegMove Key="HKEY_USERS\DEFAULT\Control Panel\Accessibility\ToggleKeys" NewKey="HKEY_USERS\DEFAULT\Control Panel\Accessibility\ToggleKeys-disabled" SkipError="2"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <RegMove Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\togglekeys-disabled" NewKey="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\togglekeys" SkipError="2"/>
+              <RegMove Key="HKEY_USERS\DEFAULT\Control Panel\Accessibility\ToggleKeys-disabled" NewKey="HKEY_USERS\DEFAULT\Control Panel\Accessibility\ToggleKeys" SkipError="2"/>
+            </Activate>
+          </False>
+        </System>
+      </Item>
+      <Item Type="CheckBox" Name="彻底关闭粘滞键">
+        <Applicable>
+          <Or>
+            <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\stickykeys"/>
+            <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\stickykeys-disabled"/>
+          </Or>
+        </Applicable>
+        <Current>
+          <State>
+            <Applicable>
+              <Not>
+                <RegExist Key="HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys" Value="Flags"/>
+              </Not>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+              <RegMove Key="HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys" NewKey="HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys-disabled" SkipError="2"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <RegMove Key="HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys-disabled" NewKey="HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys" SkipError="2"/>
+            </Activate>
+          </False>
+        </Current>
+        <System>
+          <State>
+            <Applicable>
+              <Not>
+                <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\stickykeys"/>
+              </Not>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+              <RegMove Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\stickykeys" NewKey="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\stickykeys-disabled" SkipError="2"/>
+              <RegMove Key="HKEY_USERS\DEFAULT\Control Panel\Accessibility\StickyKeys" NewKey="HKEY_USERS\DEFAULT\Control Panel\Accessibility\StickyKeys-disabled" SkipError="2"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <RegMove Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\stickykeys-disabled" NewKey="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\stickykeys" SkipError="2"/>
+              <RegMove Key="HKEY_USERS\DEFAULT\Control Panel\Accessibility\StickyKeys-disabled" NewKey="HKEY_USERS\DEFAULT\Control Panel\Accessibility\StickyKeys" SkipError="2"/>
+            </Activate>
+          </False>
+        </System>
+      </Item>
+      <Item Type="CheckBox" Name="彻底关闭颜色筛选器">
+        <Applicable>
+          <Or>
+            <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\colorfiltering"/>
+            <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\colorfiltering-disabled"/>
+          </Or>
+        </Applicable>
+        <System>
+          <State>
+            <Applicable>
+              <Not>
+                <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\colorfiltering"/>
+              </Not>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+              <RegMove Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\colorfiltering" NewKey="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\colorfiltering-disabled" SkipError="2"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <RegMove Key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\colorfiltering-disabled" NewKey="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs\colorfiltering" SkipError="2"/>
+            </Activate>
+          </False>
+        </System>
+      </Item>
+    </Group>
+  </SystemOptimization>
+</Data>
