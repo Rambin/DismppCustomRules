@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <SystemOptimization>
+    <Group Name="文件系统">
+      <Item Type="CheckBox" Name="启用 Win32 长路径">
+        <Applicable>
+          <OSVersion Compare=">=">10.0.14393</OSVersion>
+        </Applicable>
+        <System>
+          <State>
+            <Applicable>
+              <RegExist Key="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem" Value="LongPathsEnabled" Type="REG_DWORD" Data="1"/>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem" Value="LongPathsEnabled" Type="REG_DWORD" Data="1"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem" Value="LongPathsEnabled" Type="REG_DWORD" Data="0"/>
+            </Activate>
+          </False>
+        </System>
+      </Item>
+    </Group>
+  </SystemOptimization>
+</Data>
