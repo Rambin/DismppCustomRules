@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <SystemOptimization>
+    <Group Name="Windows 连接管理器">
+      <Item Type="Combo" Name="最小化到 Internet 或 Windows 域的同时连接数">
+        <Applicable>
+          <OSVersion Compare="&gt;=">6.2</OSVersion>
+          <OSVersion Compare="&lt;">10.0.15063</OSVersion>
+        </Applicable>
+        <System>
+          <Dropdown Name="未设置">
+			<Applicable>
+			  <Not>
+			    <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD"/>
+			  </Not>
+			</Applicable>
+			<Activate>
+              <RegDelete Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" SkipError="2"/>
+			</Activate>
+		  </Dropdown>
+          <Dropdown Name="同时允许多个连接">
+			<Applicable>
+			  <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="0"/>
+			</Applicable>
+			<Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="0"/>
+			</Activate>
+		  </Dropdown>
+          <Dropdown Name="最少连接">
+			<Applicable>
+			  <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="1"/>
+			</Applicable>
+			<Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="1"/>
+			</Activate>
+		  </Dropdown>
+          <Dropdown Name="最少连接（保持蜂窝网络）">
+			<Applicable>
+			  <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="2"/>
+			</Applicable>
+			<Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="2"/>
+			</Activate>
+		  </Dropdown>
+          <Dropdown Name="有线可用时禁用无线">
+			<Applicable>
+			  <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="3"/>
+			</Applicable>
+			<Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="3"/>
+			</Activate>
+		  </Dropdown>
+        </System>
+      </Item>
+      <Item Type="Combo" Name="最小化到 Internet 或 Windows 域的同时连接数">
+        <Applicable>
+          <OSVersion Compare="&gt;=">6.2</OSVersion>
+        </Applicable>
+        <System>
+          <Dropdown Name="未设置">
+			<Applicable>
+			  <Not>
+			    <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD"/>
+			  </Not>
+			</Applicable>
+			<Activate>
+              <RegDelete Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" SkipError="2"/>
+			</Activate>
+		  </Dropdown>
+          <Dropdown Name="同时允许多个连接">
+			<Applicable>
+			  <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="0"/>
+			</Applicable>
+			<Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="0"/>
+			</Activate>
+		  </Dropdown>
+          <Dropdown Name="最少连接">
+			<Applicable>
+			  <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="1"/>
+			</Applicable>
+			<Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="1"/>
+			</Activate>
+		  </Dropdown>
+          <Dropdown Name="最少连接（保持蜂窝网络）">
+			<Applicable>
+			  <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="2"/>
+			</Applicable>
+			<Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="2"/>
+			</Activate>
+		  </Dropdown>
+          <Dropdown Name="有线可用时禁用无线">
+			<Applicable>
+			  <RegExist Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="3"/>
+			</Applicable>
+			<Activate>
+              <RegWrite Key="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" Value="fMinimizeConnections" Type="REG_DWORD" Data="3"/>
+			</Activate>
+		  </Dropdown>
+        </System>
+      </Item>
+    </Group>
+  </SystemOptimization>
+</Data>
