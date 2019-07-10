@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <SystemOptimization>
+    <Group Name="桌面体验">
+      <Item Type="CheckBox" Name="启用沉浸式搜索栏">
+        <Applicable>
+          <OSVersion Compare=">=">10.0.18362</OSVersion>
+        </Applicable>
+        <Current>
+          <State>
+            <Applicable>
+              <RegExist Key="HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search" Value="ImmersiveSearch" Type="REG_DWORD" Data="1"/>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+			  <RegWrite Key="HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search" Value="ImmersiveSearch" Type="REG_DWORD" Data="1"/>
+              <RegWrite Key="HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search\Flighting\Override" Value="CenterScreenRoundedCornerRadius" Type="REG_DWORD" Data="9"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+			  <RegDelete Key="HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search" Value="ImmersiveSearch" SkipError="2"/>
+			  <RegDelete Key="HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search\Flighting\Override" Value="CenterScreenRoundedCornerRadius" SkipError="2"/>
+            </Activate>
+          </False>
+        </Current>
+        <Default>
+          <State>
+            <Applicable>
+              <RegExist Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Search" Value="ImmersiveSearch" Type="REG_DWORD" Data="1"/>
+            </Applicable>
+          </State>
+          <True>
+            <Activate>
+			  <RegWrite Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Search" Value="ImmersiveSearch" Type="REG_DWORD" Data="1"/>
+              <RegWrite Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Search\Flighting\Override" Value="CenterScreenRoundedCornerRadius" Type="REG_DWORD" Data="9"/>
+            </Activate>
+          </True>
+          <False>
+            <Activate>
+			  <RegDelete Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Search" Value="ImmersiveSearch" SkipError="2"/>
+			  <RegDelete Key="HKEY_USERS\DEFAULT\Software\Microsoft\Windows\CurrentVersion\Search\Flighting\Override" Value="CenterScreenRoundedCornerRadius" SkipError="2"/>
+            </Activate>
+          </False>
+        </Default>
+      </Item>
+    </Group>
+  </SystemOptimization>
+</Data>
