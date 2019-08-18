@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此文件用于保存程序的清理规则-->
+<Data>
+  <SystemOptimization>
+    <Group Name="日期与时间">
+      <Item Type="Combo" Name="一周的第一天">
+        <Current>
+          <Dropdown Name="星期日">
+            <Applicable>
+              <RegExist Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek" Type="REG_SZ" Data="6"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek" Type="REG_SZ" Data="6"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="星期一">
+            <Applicable>
+              <Or>
+                <RegExist Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek" Type="REG_SZ" Data="0"/>
+                <Not>
+                   <RegExist Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek"/>
+                </Not>
+              </Or>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek" Type="REG_SZ" Data="0"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="星期二">
+            <Applicable>
+              <RegExist Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek" Type="REG_SZ" Data="1"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek" Type="REG_SZ" Data="1"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="星期三">
+            <Applicable>
+              <RegExist Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek" Type="REG_SZ" Data="2"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek" Type="REG_SZ" Data="2"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="星期四">
+            <Applicable>
+              <RegExist Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek" Type="REG_SZ" Data="3"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek" Type="REG_SZ" Data="3"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="星期五">
+            <Applicable>
+              <RegExist Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek" Type="REG_SZ" Data="4"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek" Type="REG_SZ" Data="4"/>
+            </Activate>
+          </Dropdown>
+          <Dropdown Name="星期六">
+            <Applicable>
+              <RegExist Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek" Type="REG_SZ" Data="5"/>
+            </Applicable>
+            <Activate>
+              <RegWrite Key="HKEY_CURRENT_USER\Control Panel\International" Value="iFirstDayOfWeek" Type="REG_SZ" Data="5"/>
+            </Activate>
+          </Dropdown>
+        </Current>
+      </Item>
+    </Group>
+  </SystemOptimization>
+</Data>
