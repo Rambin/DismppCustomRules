@@ -3,7 +3,7 @@
 <Data>
   <SystemOptimization>
     <Group Name="终止服务提醒">
-      <Item Type="CheckBox" Name="阻止终止服务提醒">
+      <Item Type="CheckBox" Name="不再显示终止服务提醒">
         <Applicable>
           <OSVersion Compare=">=">6.1</OSVersion>
           <OSVersion Compare="<">7.0</OSVersion>
