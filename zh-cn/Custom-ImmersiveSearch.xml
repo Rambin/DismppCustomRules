@@ -6,6 +6,7 @@
       <Item Type="CheckBox" Name="启用沉浸式搜索栏">
         <Applicable>
           <OSVersion Compare=">=">10.0.18362</OSVersion>
+          <OSVersion Compare="<=">10.0.18364</OSVersion>
         </Applicable>
         <Current>
           <State>
